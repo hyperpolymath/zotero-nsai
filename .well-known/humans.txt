@@ -1,0 +1,86 @@
+# humanstxt.org
+
+/* TEAM */
+
+Lead Developer: Hyperpolymath
+GitHub: @Hyperpolymath
+Location: [LOCATION]
+Role: Project Lead, Architecture, Philosophy
+
+/* THANKS */
+
+Ludwig Wittgenstein: Philosophical foundation (Tractatus Logico-Philosophicus)
+Zotero Team: Excellent reference management software
+TypeScript Team: Type-safe development
+Vite Team: Fast build system
+Vitest Team: Modern testing framework
+
+/* SITE */
+
+Standards: HTML5, CSS3, TypeScript, Accessibility (WCAG AA)
+Components: TypeScript, Vite, Vitest, Zod
+Software: VS Code, Git, Node.js
+License: GNU AGPL-3.0-or-later
+Repository: https://github.com/Hyperpolymath/zotero-nsai
+Documentation: https://github.com/Hyperpolymath/zotero-nsai/blob/main/README.md
+
+/* PHILOSOPHY */
+
+Grounded in: Wittgenstein's Tractatus Logico-Philosophicus
+Approach: Formal validation of bibliographic structure
+Certainty: What can be validated clearly
+Uncertainty: Hand off to Fogbinder for exploration
+Quote: "What can be said at all can be said clearly"
+
+/* PROJECT */
+
+Name: NSAI (Neurosymbolic Research Validator)
+Version: 0.1.0-alpha
+Status: MVP Complete
+Started: 2024-11-22
+Language: TypeScript
+Theme: NCIS Investigation Aesthetic (Navy Blue + Cyan)
+
+/* COMPANION PROJECTS */
+
+Fogbinder: Epistemic ambiguity navigator
+Repository: https://github.com/Hyperpolymath/fogbinder
+Relationship: NSAI validates (certainty), Fogbinder explores (uncertainty)
+
+/* FEATURES */
+
+- Tractarian validation engine
+- Multi-factor certainty scoring
+- Fogbinder integration (JSON export)
+- Accessibility-first UI (WCAG AA)
+- Privacy-preserving (no tracking)
+- Offline-first architecture
+- Comprehensive test suite (45+ tests)
+
+/* STACK */
+
+Frontend: TypeScript, HTML5, CSS3
+Build: Vite
+Testing: Vitest
+Validation: Zod
+Platform: Zotero (WebExtension API)
+
+/* CONTACT */
+
+Issues: https://github.com/Hyperpolymath/zotero-nsai/issues
+Security: See .well-known/security.txt
+Contributing: See CONTRIBUTING.md
+Code of Conduct: See CODE_OF_CONDUCT.md
+
+/* ATTRIBUTION */
+
+If you use NSAI or its code:
+1. Comply with AGPL-3.0-or-later license
+2. Provide attribution: "NSAI by Hyperpolymath"
+3. Link to: https://github.com/Hyperpolymath/zotero-nsai
+4. Share modifications under AGPL-3.0
+5. Respect the philosophical foundations
+
+/* LAST UPDATE */
+
+2024-11-22
