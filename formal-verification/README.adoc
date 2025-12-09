@@ -1,0 +1,91 @@
+= Formal Verification for NSAI
+:author: Hyperpolymath
+:toc:
+
+== Overview
+
+This directory contains formal verification artifacts for NSAI's validation logic.
+
+== Verification Targets
+
+=== Certainty Scoring (Lean 4)
+
+The certainty scoring algorithm must satisfy:
+
+1. **Boundedness**: `0.0 ≤ score ≤ 1.0`
+2. **Monotonicity**: Adding valid data cannot decrease certainty
+3. **Compositionality**: `score(a ∧ b) = f(score(a), score(b))`
+
+=== Validation State Machine (TLA+)
+
+Citation validation follows a finite state machine:
+
+[source]
+----
+VALID ← INCOMPLETE ← INITIAL
+  ↓         ↓
+  → INVALID ←
+      ↓
+  UNCERTAIN → (Fogbinder)
+----
+
+Properties to verify:
+- No deadlocks
+- All paths terminate
+- UNCERTAIN always leads to Fogbinder handoff
+
+=== Fogbinder Handoff Protocol (Alloy)
+
+The handoff payload must satisfy:
+
+- All uncertain citations are included
+- No valid citations are incorrectly flagged
+- Contradiction hints are consistent
+
+== File Structure
+
+[source]
+----
+formal-verification/
+├── lean/
+│   ├── Certainty.lean      # Certainty scoring proofs
+│   └── Validation.lean     # Validation logic proofs
+├── tla/
+│   └── ValidationFSM.tla   # State machine spec
+├── alloy/
+│   └── Handoff.als         # Handoff protocol model
+└── README.adoc             # This file
+----
+
+== Status
+
+[cols="2,1,2"]
+|===
+|Component |Status |Notes
+
+|Certainty bounds
+|Planned
+|Lean 4 proof
+
+|State machine
+|Planned
+|TLA+ model
+
+|Handoff protocol
+|Planned
+|Alloy model
+|===
+
+== Running Verifications
+
+[source,bash]
+----
+# Lean 4
+cd lean && lake build
+
+# TLA+
+tlc ValidationFSM.tla
+
+# Alloy
+java -jar alloy.jar Handoff.als
+----

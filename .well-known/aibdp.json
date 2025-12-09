@@ -1,0 +1,64 @@
+{
+  "$schema": "https://hyperpolymath.github.io/consent-aware-http/schema/aibdp-v0.2.json",
+  "version": "0.2",
+  "domain": "github.com/hyperpolymath/zotero-nsai",
+  "contact": {
+    "email": "security@hyperpolymath.dev",
+    "url": "https://github.com/Hyperpolymath/zotero-nsai/issues"
+  },
+  "expires": "2026-12-09T00:00:00Z",
+  "policies": {
+    "training": {
+      "permitted": false,
+      "conditions": [
+        "Palimpsest License v0.8 compliance required",
+        "Attribution and philosophical alignment mandatory"
+      ],
+      "exceptions": [
+        "Academic research with proper citation",
+        "Non-commercial educational use"
+      ]
+    },
+    "indexing": {
+      "permitted": true,
+      "conditions": [
+        "Must respect robots.txt directives",
+        "No deep-linking to raw code without context"
+      ]
+    },
+    "generation": {
+      "permitted": false,
+      "conditions": [
+        "Derivative works must maintain Tractarian philosophical integrity",
+        "Must acknowledge neurosymbolic validation approach"
+      ],
+      "exceptions": [
+        "Code assistance for legitimate contributors",
+        "Documentation generation with attribution"
+      ]
+    },
+    "embedding": {
+      "permitted": false,
+      "conditions": [
+        "Vector embeddings require explicit consent",
+        "Semantic search indexing prohibited without agreement"
+      ]
+    }
+  },
+  "legal": {
+    "license": "AGPL-3.0-or-later",
+    "philosophical_license": "Palimpsest v0.8",
+    "contributor_framework": "TPCF (Tri-Perimeter Contributor Framework)",
+    "jurisdiction": "International"
+  },
+  "verification": {
+    "method": "none",
+    "note": "COSE signature verification planned for v1.0"
+  },
+  "metadata": {
+    "project": "NSAI - Neurosymbolic Research Validator",
+    "philosophy": "Tractarian logical atomism (early Wittgenstein)",
+    "companion": "Fogbinder (late Wittgenstein uncertainty navigation)",
+    "rsr_tier": "Rhodium"
+  }
+}

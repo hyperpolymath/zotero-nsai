@@ -1,0 +1,56 @@
+# Zola configuration for NSAI documentation site
+# https://www.getzola.org/documentation/getting-started/configuration/
+
+base_url = "https://hyperpolymath.github.io/zotero-nsai"
+title = "NSAI Documentation"
+description = "Neurosymbolic Research Validator for Zotero"
+default_language = "en"
+compile_sass = true
+build_search_index = true
+generate_feed = true
+feed_filename = "atom.xml"
+
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+render_emoji = false
+external_links_target_blank = true
+external_links_no_follow = true
+external_links_no_referrer = true
+smart_punctuation = true
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+
+[link_checker]
+skip_prefixes = []
+skip_anchor_prefixes = []
+
+[extra]
+# RSR metadata
+rsr_tier = "Rhodium"
+rsr_version = "1.0"
+
+# Project metadata
+project_name = "NSAI"
+project_full_name = "Neurosymbolic Research Validator"
+philosophy = "Tractarian logical atomism"
+companion_project = "Fogbinder"
+companion_url = "https://github.com/Hyperpolymath/fogbinder"
+
+# Theme
+theme_primary = "#001f3f"
+theme_accent = "#00d4ff"
+theme_valid = "#00ff88"
+theme_uncertain = "#aa88ff"
+
+# Social
+github = "https://github.com/Hyperpolymath/zotero-nsai"

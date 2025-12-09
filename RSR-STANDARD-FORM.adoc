@@ -1,0 +1,223 @@
+= RSR Standard Form v1.0
+:author: Hyperpolymath
+:revdate: 2025-12-09
+:toc:
+:icons: font
+
+== Overview
+
+The Rhodium Standard Repository (RSR) form defines the canonical structure for all Hyperpolymath projects. This document specifies required files, formats, and tooling.
+
+== File Format Requirements
+
+[cols="2,1,2"]
+|===
+|File |Format |Rationale
+
+|Documentation (general)
+|AsciiDoc (.adoc)
+|Rich semantic markup, Zola/pandoc compatible
+
+|LICENSE
+|Plain text (.txt)
+|Legal convention
+
+|SECURITY.md
+|Markdown
+|GitHub security advisory integration
+
+|CONTRIBUTING.md OR CODE_OF_CONDUCT.md
+|Markdown
+|One may be .adoc, one must be .md for GitHub
+
+|FUNDING.yml
+|YAML
+|GitHub Sponsors integration
+
+|STATE.scm
+|Scheme (Guile)
+|Homoiconic checkpoint/restore
+
+|Configuration
+|CUE (.cue)
+|Type-safe config generation
+|===
+
+== Directory Structure
+
+[source]
+----
+project/
+├── .well-known/
+│   ├── security.txt          # RFC 9116
+│   ├── ai.txt                 # AI training policy
+│   ├── humans.txt             # humanstxt.org
+│   ├── void.ttl               # VOID RDF dataset
+│   ├── host-meta.json         # XRD discovery
+│   └── aibdp.json             # AI Boundary Declaration Protocol
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml
+│   │   └── language-guard.yml # Forbidden language enforcement
+│   └── FUNDING.yml
+├── .githooks/
+│   └── pre-commit             # Local language check
+├── config/
+│   └── project.cue            # Single source of truth
+├── docs/
+│   └── *.adoc                 # AsciiDoc documentation
+├── formal-verification/       # Lean 4 / TLA+ / Alloy proofs
+├── icons/
+│   └── *.svg                  # Vector icons
+├── locales/
+│   └── en-US/
+│       └── messages.json      # i18n strings
+├── nix/
+│   └── flake.nix              # Nix flake
+├── guix/
+│   └── channels.scm           # Guix channel
+├── scripts/
+│   ├── update-state.sh
+│   └── *.scm                  # Guile scripts preferred
+├── src/
+│   └── *.res                  # ReScript source
+├── styles/
+│   └── *.scss                 # SCSS styles
+├── zola/
+│   ├── config.toml
+│   ├── content/
+│   └── templates/
+├── LICENSE.txt
+├── SECURITY.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.adoc
+├── CHANGELOG.adoc
+├── README.adoc
+├── STATE.scm
+├── TPCF.md                    # Tri-Perimeter Contributor Framework
+├── deno.json
+├── rescript.json
+├── justfile
+└── manifest.json              # Generated from CUE (Zotero projects)
+----
+
+== Required Tooling
+
+=== Documentation Pipeline
+- **Pandoc**: Document conversion (adoc → md → html → pdf)
+- **AsciiDoctor**: AsciiDoc rendering
+- **Zola**: Static site generation
+
+=== Quality Assurance
+- **hunspell**: Spell checking
+- **agrep**: Approximate pattern matching
+- **languagetool**: Grammar checking (optional)
+
+=== Internationalization
+- **i18n**: Via locales/*/messages.json
+- **gettext**: For Guile scripts
+
+=== Package Management
+- **Guix**: Primary (channels.scm)
+- **Nix**: Secondary (flake.nix)
+- **Deno**: Runtime (no npm)
+
+== Licensing
+
+=== Legal License
+- **AGPL-3.0-or-later**: Default for applications
+- **MIT**: For libraries/templates
+
+=== Philosophical License
+- **Palimpsest v0.8**: AI training ethics overlay
+
+=== Contributor Framework
+- **TPCF**: Tri-Perimeter Contributor Framework
+  * Inner: Core maintainers
+  * Middle: Regular contributors
+  * Outer: Community/forks
+
+== Language Policy
+
+=== Accepted
+[source]
+----
+ReScript     (.res, .resi)   # Primary application language
+Guile/Scheme (.scm)          # Tooling, config, STATE
+Elixir       (.ex, .exs)     # Backend services
+Rust         (.rs)           # WASM, performance-critical
+Lean 4       (.lean)         # Formal verification
+Julia        (.jl)           # Statistical analysis
+SCSS         (.scss)         # Styles
+CUE          (.cue)          # Configuration
+Shell        (.sh)           # Basic scripts (prefer Guile)
+----
+
+=== Banned
+[source]
+----
+TypeScript   (.ts, .tsx)     # Use ReScript instead
+CoffeeScript (.coffee)       # Obsolete
+Go           (.go)           # Not in stack
+npm          (package.json)  # Use Deno
+Python       (.py)           # Except Salt-related
+----
+
+== Consent-Aware HTTP Compliance
+
+All repositories MUST include `.well-known/aibdp.json` per the AI Boundary Declaration Protocol (draft-jewell-aibdp).
+
+Required policies:
+- `training`: Declare AI training consent
+- `indexing`: Search engine permissions
+- `generation`: Derivative work permissions
+- `embedding`: Vector database permissions
+
+== Formal Verification
+
+Each project should include appropriate verification based on purpose:
+
+[cols="2,2,2"]
+|===
+|Project Type |Verification Tool |Focus
+
+|Validation logic
+|Lean 4
+|Correctness proofs
+
+|Concurrent systems
+|TLA+
+|State machine verification
+
+|Data models
+|Alloy
+|Relational constraints
+
+|Smart contracts
+|Certora/Solidity
+|Security properties
+|===
+
+== Zola Integration
+
+Static documentation sites via Zola:
+
+[source,toml]
+----
+# zola/config.toml
+base_url = "https://hyperpolymath.github.io/project-name"
+compile_sass = true
+build_search_index = true
+
+[markdown]
+highlight_code = true
+
+[extra]
+rsr_tier = "Rhodium"
+----
+
+== Version
+
+RSR Standard Form v1.0 (2025-12-09)
+
+Maintained by Hyperpolymath. Changes require TPCF inner-perimeter approval.
