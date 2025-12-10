@@ -1,0 +1,29 @@
+# CITATION.cff - Citation File Format for zotero-nsai
+# https://citation-file-format.github.io/
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Palimpsest-0.5
+
+cff-version: 1.2.0
+title: "zotero-nsai"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Polymath"
+    given-names: "Hyper"
+    email: "hyperpolymath@proton.me"
+    affiliation: "Rhodium Standard / Independent Researcher"
+repository-code: "https://github.com/hyperpolymath/zotero-nsai"
+url: "https://rhodium.sh/projects/zotero-nsai"
+abstract: "MVP implementation complete with minor test failures
+Syntax error: Property name with space
+Test expectation mismatch: UNCERTAIN vs VALID
+Certainty threshold test failure
+Batch validation test failure
+npm dependencies have deprecation warnings
+4 moderate security vulnerabilities"
+keywords:
+  - RSR
+  - rhodium-standard
+license: "AGPL-3.0-or-later"
+license-url: "https://github.com/hyperpolymath/zotero-nsai/blob/main/LICENSE.txt"
+version: "0.1.0"
+date-released: "2025-12-10"
