@@ -1,4 +1,4 @@
-= NSAI - Neurosymbolic Research Validator for Zotero
+= Zotero NeSy - Neurosymbolic Research Validator for Zotero
 
 *"What can be said at all can be said clearly."* — Wittgenstein, Tractatus Logico-Philosophicus
 
